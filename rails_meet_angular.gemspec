@@ -5,7 +5,7 @@ require 'rails_meet_angular/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "rails_meet_angular"
-  spec.version       = Rails::Meet::Angular::VERSION
+  spec.version       = RailsMeetAngular::VERSION
   spec.authors       = ["Caden Lovelace"]
   spec.email         = ["caden@herostrat.us"]
   spec.summary       = %q{TODO: Helpful adjustments to make Rails and Angular play nice together. }
