@@ -1,4 +1,4 @@
-require "rails/meet/angular/version"
+require "rails_meet_angular/version"
 
 module RailsMeetAngular
   
