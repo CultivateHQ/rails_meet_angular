@@ -6,5 +6,7 @@ var AngularTemplates = (function(){
     <% end %>
   }
 
+  loadTemplates.$inject = ['$templateCache']
+
   return {load: loadTemplates}
 })()
