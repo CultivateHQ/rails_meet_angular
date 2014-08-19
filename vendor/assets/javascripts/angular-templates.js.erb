@@ -1,0 +1,10 @@
+var AngularTemplates = (function(){
+
+  var loadTemplates = function($templateCache) {
+    <% RailsMeetAngular::Helpers.templates(self) do |path, data| %>
+      $templateCache.put('/assets/<%= path %>', '<%= data %>');
+    <% end %>
+  }
+
+  return {load: loadTemplates}
+})()
