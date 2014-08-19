@@ -42,13 +42,13 @@ describe RailsMeetAngular::Helpers do
       allow(context).to receive(:find_asset).and_return(template_string)
       expect do |b|
         RailsMeetAngular::Helpers.templates(context, &b)
-      end.to yield_with_args(anything, template_string)
+      end.to yield_with_args(anything, RailsMeetAngular::Helpers.escape_javascript(template_string))
     end
 
     it 'calls given block with escaped template string' do
       template_string = '<p>html</p>'
       allow(context).to receive(:logical_paths).and_return(['one.htm'])
-      allow(context).to receive(:escape_javascript).and_return(template_string)
+      allow(RailsMeetAngular::Helpers).to receive(:escape_javascript).and_return(template_string)
       expect do |b|
         RailsMeetAngular::Helpers.templates(context, &b)
       end.to yield_with_args(anything, template_string)
