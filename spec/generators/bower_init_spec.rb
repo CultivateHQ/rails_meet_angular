@@ -21,7 +21,7 @@ describe "RailsMeetAngular::Bower::Generators::InitGenerator" do
   describe "#include_bower_gemfile_into_gemfile" do
     it 'includes Gemfile.bower into Gemfile' do
       expect(generator).to receive(:append_file).with("Gemfile", "\n"+
-        "# Include bower.json for assets via https://rails-assets.org/.\n" +
+        "# Include Gemfile.bower for assets via https://rails-assets.org/.\n" +
         "eval(IO.read('Gemfile.bower'), binding) if File.exist? 'Gemfile.bower'\n")
       generator.include_bower_gemfile_into_gemfile
     end

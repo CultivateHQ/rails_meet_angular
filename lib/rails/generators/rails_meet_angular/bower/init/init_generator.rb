@@ -10,7 +10,7 @@ module RailsMeetAngular
 
         def include_bower_gemfile_into_gemfile
           append_file "Gemfile", "\n"+
-            "# Include bower.json for assets via https://rails-assets.org/.\n" +
+            "# Include Gemfile.bower for assets via https://rails-assets.org/.\n" +
             "eval(IO.read('Gemfile.bower'), binding) if File.exist? 'Gemfile.bower'\n"
         end
       end
