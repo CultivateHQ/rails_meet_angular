@@ -24,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", "~> 4.0"
   spec.add_dependency "slim"
   spec.add_dependency "ngannotate-rails"
+  spec.add_dependency "angular_rails_csrf"
 end
