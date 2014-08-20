@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = RailsMeetAngular::VERSION
   spec.authors       = ["Caden Lovelace"]
   spec.email         = ["caden@herostrat.us"]
-  spec.summary       = %q{TODO: Helpful adjustments to make Rails and Angular play nice together. }
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Helpful adjustments to make Rails and Angular play nice together.}
+  spec.description   = %q{Helpful adjustments to make Rails and Angular play nice together.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
