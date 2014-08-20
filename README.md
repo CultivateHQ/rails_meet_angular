@@ -115,6 +115,24 @@ RailsMeetAngular employs [ng-annotate](https://github.com/olov/ng-annotate) (via
 ngannotiate-rails) to make sure your Angular code is minified properly.
 
 
+### Assets
+
+RailsMeetAngular uses [rails-assets.org](http://rails-assets.org/) to include
+bower packages. While a little slow sometimes, it's still a better solution than
+requiring npm and bower / having a load of useless stuff in source control. For now.
+
+It manages the rails-assets dependencies in an auxilliary gemfile called
+`Gemfile.bower`. This can be created and managed with generators.
+
+Usage:
+
+```
+rails g rails_meet_angular:bower:init # Not strictly necessary, but take a look.
+rails g rails_meet_angular:bower:add angular '~ 1.2.0' # Adds angular gem to Gemfile.bower
+rails g rails_meet_angular:bower:add angular@ '~ 1.2.0' # As above, but runs bundler after.
+```
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/rails-meet-angular/fork )
