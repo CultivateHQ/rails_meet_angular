@@ -109,6 +109,11 @@ in your directory tree.
 (This should probably be optional, but it isn't for now. Also only Slim is
 supported because only Slim is good.)
 
+### Annotation (ng-min)
+
+RailsMeetAngular employs [ng-annotate](https://github.com/olov/ng-annotate) (via
+ngannotiate-rails) to make sure your Angular code is minified properly.
+
 
 ## Contributing
 
