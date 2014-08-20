@@ -16,13 +16,24 @@ Add this to your Gemfile:
 
 `gem 'rails_meet_angular'`
 
-And run
+Then:
 
-`bundle install`
+```bash
+$ bundle install
+
+# Installs AngularJS.
+$ rails g rails_meet_angular:bower:init
+```
 
 ## Features
 
-This gem does quite a few disparate things. Here's a list:
+This gem does quite a few disparate things. Summary:
+
+* Facilitated the Angular best practice structure.
+* Serves and precompiles Angular templates.
+* Precompiles Angular with DI annotations.
+* Uses [rails-assets](http://rails-assets.org) to manage Bower dependencies.
+* Gets Angular + Rails working together on CSRF protection.
 
 ### Frontend structure
 
@@ -36,9 +47,9 @@ compiled just like `assets/javascripts` and `assets/stylesheets` would be.
 
 To get started:
 
-```
+```bash
 # This should be non-destructive, but it's your assets on the line.
-rails g rails_meet_angular:assets:init
+$ rails g rails_meet_angular:assets:init
 ```
 
 Caveats:
@@ -53,7 +64,7 @@ Caveats:
 In line with the structure above, RailsMeetAngular also compiles templates into
 Angular's $templateCache. You should load them in your routes like this:
 
-```
+```javascript
 angular
   .module('blog.posts', ['ngRoute'])
   .config(function($routeProvider) {
@@ -67,7 +78,7 @@ angular
 
 And then in your application.js, follow this structure:
 
-```
+```javascript
 //= require angular
 //= require angular-route
 //= require posts/posts
@@ -93,8 +104,7 @@ supported because only Slim is good.)
 RailsMeetAngular employs [ng-annotate](https://github.com/olov/ng-annotate) (via
 ngannotiate-rails) to make sure your Angular code is minified properly.
 
-
-### Assets
+### Bower dependencies
 
 RailsMeetAngular uses [rails-assets.org](http://rails-assets.org/) to include
 bower packages. While a little slow sometimes, it's still a better solution than
@@ -105,11 +115,23 @@ It manages the rails-assets dependencies in an auxilliary gemfile called
 
 Usage:
 
+```bash
+# Not strictly necessary, but take a look at what it generates.
+$ rails g rails_meet_angular:bower:init
+
+# Adds angular-cookies gem to Gemfile.bower.
+$ rails g rails_meet_angular:bower:add angular-cookies '~ 1.2.0'
+
+# As above, but runs bundler after.
+$ rails g rails_meet_angular:bower:add angular@ '~ 1.2.0'
 ```
-rails g rails_meet_angular:bower:init # Not strictly necessary, but take a look.
-rails g rails_meet_angular:bower:add angular '~ 1.2.0' # Adds angular gem to Gemfile.bower
-rails g rails_meet_angular:bower:add angular@ '~ 1.2.0' # As above, but runs bundler after.
-```
+
+### CSRF
+
+RailsMeetAngular uses [angular_rails_csrf](https://github.com/jsanders/angular_rails_csrf)
+to join up Rails + Angular's CSRF protection.
+
+So you don't need to feel bad turning it off anymore!
 
 
 ## Contributing
