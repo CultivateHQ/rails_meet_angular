@@ -34,6 +34,7 @@ This gem does quite a few disparate things. Summary:
 * Precompiles Angular with DI annotations.
 * Uses [rails-assets](http://rails-assets.org) to manage Bower dependencies.
 * Gets Angular + Rails working together on CSRF protection.
+* Provides an `ng-view` root route.
 
 ### Frontend structure
 
@@ -132,6 +133,21 @@ RailsMeetAngular uses [angular_rails_csrf](https://github.com/jsanders/angular_r
 to join up Rails + Angular's CSRF protection.
 
 So you don't need to feel bad turning it off anymore!
+
+### Root route
+
+To avoid having a controller just to serve 'ng-view' there's a convenience
+action for you to wire your root to.
+
+```bash
+$ rails g rails_meet_angular:add_root
+```
+
+Adds this to `config/routes.rb`:
+
+```ruby
+mount RailsMeetAngular::Engine => "/"
+```
 
 
 ## Contributing
