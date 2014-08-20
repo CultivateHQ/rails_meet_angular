@@ -27,47 +27,26 @@ This gem does quite a few disparate things. Here's a list:
 ### Frontend structure
 
 Instead of using `/assets/javascripts`, `/assets/stylesheets`, etc, this gem
-recommends following Google's
-[Best Practice Recommendations for Angular App Structure](https://docs.google.com/a/cultivatehq.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub).
-(This [excellent and very readable rationale](https://github.com/yeoman/generator-angular/issues/109) by @joshdmiller is worth reading too.)
+supports following the best practice structure [recommended by Google](https://docs.google.com/a/cultivatehq.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub).
+[This very readable post](https://github.com/yeoman/generator-angular/issues/109)
+sets out the rationale and walks through the recommended structure.
 
-In short, this means your 'assets' folder should look something like this:
+What this means in practice is that assets in `assets/frontend` are served and
+compiled just like `assets/javascripts` and `assets/stylesheets` would be.
+
+To get started:
 
 ```
-|-- assets/
-|   |-- frontend/
-|   |   |-- posts/
-|   |   |   |-- posts.js
-|   |   |   |-- posts_controller.js
-|   |   |   |-- posts_controller.spec.js
-|   |   |   |-- posts.scss
-|   |   |   |-- posts.tpl.slim
-|   |   |-- components/
-|   |   |   |-- datepicker/
-|   |   |   |   |-- datepicker.js
-|   |   |   |   |-- datepicker.directive.js
-|   |   |   |   |-- datepicker.directive.spec.js
-|   |   |   |   |-- datepicker.scss
-|   |   |   |   |-- datepicker.tpl.slim
-|   |   |-- application.scss
-|   |   |-- application.js
-|   |-- images/
+# This should be non-destructive, but it's your assets on the line.
+rails g rails_meet_angular:assets:init
 ```
 
-Each directory should have its own module, set out in a `foldername.js` manifest
-file. `foldername.js` also sets its own routes (maybe).
+Caveats:
 
-`application.js` ties all the modules up and adds fallback routing.
-
-The benefits are laid out in @joshdmiller's rationale (which is really worth
-reading, you should read it), but in short — it keeps everything together and
-allows you to copy a component from one project to another without any issues.
-
-(I haven't worked out how to work the tests yet, and the CSS might need a little
-thinking about, but I think something like this. This structure is very much
-under development and will be refined over time.)
-
-__You can still use the old way if you want. Nothing prevents you.__
+* JS tests still aren't integrated.
+* CSS might still need some special treatment.
+* The structure is still under active refinement. However, this gem is flexible
+  enough to accept most changes.
 
 ### Templates
 
