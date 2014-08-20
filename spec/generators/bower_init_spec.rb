@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'rails/generators'
 require_relative '../../lib/rails/generators/rails_meet_angular/bower/init/init_generator.rb'
 
-describe "RailsMeetAngular::Bower::Generators::InitGenerator" do
+describe RailsMeetAngular::Bower::Generators::InitGenerator do
 
   let(:klass) { RailsMeetAngular::Bower::Generators::InitGenerator }
   let(:generator) { klass.new }

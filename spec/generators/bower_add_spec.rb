@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'rails/generators'
 require_relative '../../lib/rails/generators/rails_meet_angular/bower/add/add_generator.rb'
 
-describe "RailsMeetAngular::Bower::Generators::AddGenerator" do
+describe RailsMeetAngular::Bower::Generators::AddGenerator do
 
   let(:klass) { RailsMeetAngular::Bower::Generators::AddGenerator }
   let(:generator) { klass.new(['angular', '~> 2.0']) }

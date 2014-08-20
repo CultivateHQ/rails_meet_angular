@@ -19,7 +19,7 @@ end
 
 describe RailsMeetAngular::Helpers do
 
-  context '#templates' do
+  describe '#templates' do
     let(:context) { ContextFake.new }
 
     it 'calls given block for each template path' do
