@@ -3,7 +3,7 @@
 ### Requirements
 
 #### Dependencies
-* Bower stuff thru [rails-assets](https://rails-assets.org/).
+* ~~Bower stuff thru [rails-assets](https://rails-assets.org/).~~
 
 #### Assets
 * Support for angular templates using ERB, ~~Slim~~.
