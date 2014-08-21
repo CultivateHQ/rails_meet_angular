@@ -31,7 +31,7 @@ module RailsMeetAngular
         end
 
         def add_matcher
-          inject_into_file "spec/teaspoon_env.rb", after: /suite\.matcher =.*$/ do
+          inject_into_file "spec/teaspoon_env.rb", after: /#suite\.matcher =.*$/ do
             "\n    suite.matcher = \"{spec/javascripts,app/assets}/**/*[_.]spec.{js,js.coffee,coffee}\"\n"
           end
         end

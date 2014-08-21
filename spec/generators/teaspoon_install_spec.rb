@@ -49,8 +49,23 @@ describe RailsMeetAngular::Teaspoon::Generators::InstallGenerator do
     it "adds test matcher to teaspoon_env" do
       expect(generator).to receive(:inject_into_file) do |filename, regex, &block|
         expect(filename).to eq "spec/teaspoon_env.rb"
-        expect("suite.matcher = \"{spec/javascripts,app/assets}/**/*[_.]spec.{js,js.coffee,coffee}\"" =~ regex)
         expect(block.call).to be_a String
+      end
+      generator.add_matcher
+    end
+
+    it "uses a line regex that matches the right line" do
+      expect(generator).to receive(:inject_into_file) do |filename, regex, &block|
+        regex = regex[:after]
+        expect("#suite.matcher = \"{spec/javascripts,app/assets}/**/*[_.]spec.{js,js.coffee,coffee}\"" =~ regex).to be_truthy
+      end
+      generator.add_matcher
+    end
+
+    it "uses a line regex that doesn't match the similar line later on" do
+      expect(generator).to receive(:inject_into_file) do |filename, regex, &block|
+        regex = regex[:after]
+        expect("  #config.suite :targeted do |suite|\n#  suite.matcher = \"test/javascripts/targeted/*_test.{js,js.coffee,coffee}\"\n  #end" =~ regex ).to be_falsey
       end
       generator.add_matcher
     end
