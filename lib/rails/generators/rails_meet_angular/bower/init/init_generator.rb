@@ -16,9 +16,8 @@ module RailsMeetAngular
         end
 
         def add_angular_gems
-          append_file "Gemfile.bower", "" +
-          "gem 'rails-assets-angular', '~> 1.2.0'\n" +
-          "gem 'rails-assets-angular-route', '~> 1.2.0'\n"
+          generate "rails_meet_angular:bower:add angular '~> 1.2.0' quiet"
+          generate "rails_meet_angular:bower:add angular-route '~> 1.2.0' quiet"
           bundle!
         end
 

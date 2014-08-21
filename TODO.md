@@ -29,7 +29,7 @@
 * Rename it to something shorter.
 * ~~Convenience root route to ng-view.~~
 * Consider where to put Gemfile.bower include.
-* Refactor bower:init generator to use bower:add
+* ~~Refactor bower:init generator to use bower:add~~
 
 #### Docs
 * Docs for teaspoon installer.

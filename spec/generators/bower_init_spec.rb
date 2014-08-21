@@ -27,4 +27,22 @@ describe RailsMeetAngular::Bower::Generators::InitGenerator do
     end
   end
 
+  describe "#add_angular_gems" do
+    before do
+      allow(generator).to receive(:generate)
+      allow(generator).to receive(:run)
+    end
+
+    it 'adds essential angular gems' do
+      expect(generator).to receive(:generate).with("rails_meet_angular:bower:add angular '~> 1.2.0' quiet")
+      expect(generator).to receive(:generate).with("rails_meet_angular:bower:add angular-route '~> 1.2.0' quiet")
+      generator.add_angular_gems
+    end
+
+    it 'runs bundler' do
+      expect(generator).to receive(:run).with("bundle install")
+      generator.add_angular_gems
+    end
+  end
+
 end
