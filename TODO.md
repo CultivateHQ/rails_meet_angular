@@ -22,7 +22,7 @@
 * ~~CSRF protection with [angular_rails_csrf](https://github.com/jsanders/angular_rails_csrf)~~
 
 #### Tests
-* Support inline JS tests.
+* ~~Support inline JS tests.~~
 * Neaten up generator when executed multiple times.
 
 #### Other
