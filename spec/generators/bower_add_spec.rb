@@ -33,7 +33,6 @@ describe RailsMeetAngular::Bower::Generators::AddGenerator do
 
   describe '#add_gem_to_bower_gemfile' do
     # Silence messages
-    before { allow(generator).to receive(:puts) }
     before { allow(generator).to receive(:append_file) }
 
     it 'adds the gem to Gemfile.bower' do

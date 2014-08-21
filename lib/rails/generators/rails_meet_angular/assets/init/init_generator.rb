@@ -25,7 +25,7 @@ module RailsMeetAngular
         end
 
         def print_message
-          puts "\033[36mDon't forget to add ng-app='#{application_name}' to application.html!\033[0m" # Cyan
+          say "\n\nDon't forget to add ng-app='#{application_name}' to application.html!\n\n", :cyan
         end
 
         private
