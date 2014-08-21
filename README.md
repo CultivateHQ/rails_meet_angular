@@ -82,7 +82,7 @@ angular
   .config(function($routeProvider) {
     $routeProvider
       .when('/posts', {
-        templateUrl: '/assets/posts/posts.slim',
+        templateUrl: '/assets/posts/posts.html',
         controller: 'PostsController'
       });
   });

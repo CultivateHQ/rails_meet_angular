@@ -3,14 +3,13 @@ module Rang
     class << self
       include ActionView::Helpers::JavaScriptHelper
 
-
       # Using `context` here is very un-ruby, but it is the cleanest way of accessing
       # the peculiar scope that assets are compiled in.
       def templates(context)
         template_paths(context).each do |path|
           context.depend_on_asset(path)
           asset = context.environment.find_asset(path)
-          yield path.sub(/\..*$/, ".slim"), escape_javascript(asset.to_s)
+          yield path.sub(/\..*$/, ".html"), escape_javascript(asset.to_s)
         end
       end
 
