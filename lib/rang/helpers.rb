@@ -1,4 +1,4 @@
-module RailsMeetAngular
+module Rang
   module Helpers
     class << self
       include ActionView::Helpers::JavaScriptHelper

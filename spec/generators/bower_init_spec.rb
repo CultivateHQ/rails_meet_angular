@@ -1,10 +1,10 @@
 require 'spec_helper'
 require 'rails/generators'
-require_relative '../../lib/rails/generators/rails_meet_angular/bower/init/init_generator.rb'
+require_relative '../../lib/rails/generators/rang/bower/init/init_generator.rb'
 
-describe RailsMeetAngular::Bower::Generators::InitGenerator do
+describe Rang::Bower::Generators::InitGenerator do
 
-  let(:klass) { RailsMeetAngular::Bower::Generators::InitGenerator }
+  let(:klass) { Rang::Bower::Generators::InitGenerator }
   let(:generator) { klass.new }
 
   it "has a description" do
@@ -43,8 +43,8 @@ describe RailsMeetAngular::Bower::Generators::InitGenerator do
     end
 
     it 'adds essential angular gems' do
-      expect(generator).to receive(:generate).with("rails_meet_angular:bower:add", "angular '~> 1.2.0' quiet")
-      expect(generator).to receive(:generate).with("rails_meet_angular:bower:add", "angular-route '~> 1.2.0' quiet")
+      expect(generator).to receive(:generate).with("rang:bower:add", "angular '~> 1.2.0' quiet")
+      expect(generator).to receive(:generate).with("rang:bower:add", "angular-route '~> 1.2.0' quiet")
       generator.add_angular_gems
     end
 

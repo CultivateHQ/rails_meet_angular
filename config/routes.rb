@@ -1,3 +1,3 @@
-RailsMeetAngular::Engine.routes.draw do
+Rang::Engine.routes.draw do
   get '/' => 'root#display'
 end

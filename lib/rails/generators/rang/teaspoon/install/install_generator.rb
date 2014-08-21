@@ -1,4 +1,4 @@
-module RailsMeetAngular
+module Rang
   module Teaspoon
     module Generators
       class InstallGenerator < Rails::Generators::Base
@@ -12,7 +12,7 @@ module RailsMeetAngular
         end
 
         def add_angular_mocks_to_gemfile
-          generate "rails_meet_angular:bower:add", "angular-mocks '~> 1.2.0' quiet"
+          generate "rang:bower:add", "angular-mocks '~> 1.2.0' quiet"
         end
 
         def bundle_install

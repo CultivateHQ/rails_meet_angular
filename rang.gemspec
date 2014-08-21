@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rails_meet_angular/version'
+require 'rang/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "rails_meet_angular"
-  spec.version       = RailsMeetAngular::VERSION
+  spec.name          = "rang"
+  spec.version       = Rang::VERSION
   spec.authors       = ["Caden Lovelace"]
   spec.email         = ["caden@herostrat.us"]
   spec.summary       = %q{Helpful adjustments to make Rails and Angular play nice together.}

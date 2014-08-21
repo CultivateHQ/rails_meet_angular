@@ -1,3 +1,3 @@
-module RailsMeetAngular
+module Rang
   VERSION = "0.0.1"
 end

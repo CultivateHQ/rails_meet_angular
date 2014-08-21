@@ -1,4 +1,4 @@
-module RailsMeetAngular
+module Rang
   module Bower
     module Generators
       class AddGenerator < Rails::Generators::Base
@@ -7,7 +7,7 @@ module RailsMeetAngular
         desc "Adds a dependency to Gemfile.bower."
 
         def run_init
-          generate "rails_meet_angular:bower:init" unless File.exist? 'Gemfile.bower'
+          generate "rang:bower:init" unless File.exist? 'Gemfile.bower'
         end
 
         def add_gem_to_bower_gemfile

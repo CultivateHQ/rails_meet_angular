@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RailsMeetAngular::Railtie do
+describe Rang::Railtie do
 
   it 'adds /frontend to assets directories' do
     expect(Rails.application.config.assets.paths).to include "#{Rails.root}/app/assets/frontend"

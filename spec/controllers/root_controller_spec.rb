@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe RailsMeetAngular::RootController do
-  let(:controller) { RailsMeetAngular::RootController.new }
+describe Rang::RootController do
+  let(:controller) { Rang::RootController.new }
 
   describe '#display' do
     it 'returns an ng-view element' do

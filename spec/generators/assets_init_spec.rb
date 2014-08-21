@@ -1,9 +1,9 @@
 require 'spec_helper'
 require 'rails/generators'
-require_relative '../../lib/rails/generators/rails_meet_angular/assets/init/init_generator.rb'
+require_relative '../../lib/rails/generators/rang/assets/init/init_generator.rb'
 
-describe RailsMeetAngular::Assets::Generators::InitGenerator do
-  let(:klass) { RailsMeetAngular::Assets::Generators::InitGenerator }
+describe Rang::Assets::Generators::InitGenerator do
+  let(:klass) { Rang::Assets::Generators::InitGenerator }
   let(:generator) { klass.new }
 
   before { allow(generator).to receive(:say_status) }

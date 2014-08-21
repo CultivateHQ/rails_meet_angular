@@ -1,4 +1,4 @@
-module RailsMeetAngular
+module Rang
   module Bower
     module Generators
       class InitGenerator < Rails::Generators::Base

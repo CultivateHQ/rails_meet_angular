@@ -1,10 +1,10 @@
 require 'spec_helper'
 require 'rails/generators'
-require_relative '../../lib/rails/generators/rails_meet_angular/bower/add/add_generator.rb'
+require_relative '../../lib/rails/generators/rang/bower/add/add_generator.rb'
 
-describe RailsMeetAngular::Bower::Generators::AddGenerator do
+describe Rang::Bower::Generators::AddGenerator do
 
-  let(:klass) { RailsMeetAngular::Bower::Generators::AddGenerator }
+  let(:klass) { Rang::Bower::Generators::AddGenerator }
   let(:generator) { klass.new(['angular', '~> 2.0']) }
 
   it "has a description" do
@@ -14,7 +14,7 @@ describe RailsMeetAngular::Bower::Generators::AddGenerator do
   describe '#run_init' do
     context 'when a Gemfile.bower is absent' do
       it 'runs the init task' do
-        expect(generator).to receive(:generate).with("rails_meet_angular:bower:init")
+        expect(generator).to receive(:generate).with("rang:bower:init")
         generator.run_init
       end
     end

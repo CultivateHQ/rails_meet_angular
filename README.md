@@ -1,8 +1,8 @@
-# Rails, Meet Angular (rename pending)
+# Rang
 
 __VERY EARLY DAYS — much of this is imagined__
 
-This is a gem that makes Rails and Angular place nicely together.
+This is a gem that makes Rails and Angular play nicely together.
 
 It should replace all the strange initializers and bag of angular_* gems you've
 got in your Rails & Angular project.
@@ -14,7 +14,7 @@ Otherwise, we've included our own.
 
 Add this to your Gemfile:
 
-`gem 'rails_meet_angular'`
+`gem 'rang'`
 
 Then:
 
@@ -26,13 +26,13 @@ $ bundle install
 
 ```bash
 # Sets up Gemfile.bower, installs Angular.
-$ rails g rails_meet_angular:bower:init
+$ rails g rang:bower:init
 
 # Restructures assets/
-$ rails g rails_meet_angular:assets:init
+$ rails g rang:assets:init
 
 # Installs & configures Teaspoon for tests.
-$ rails g rails_meet_angular:teaspoon:install
+$ rails g rang:teaspoon:install
 ```
 
 ## Features
@@ -61,7 +61,7 @@ To get started:
 
 ```bash
 # This should be non-destructive, but it's your assets on the line.
-$ rails g rails_meet_angular:assets:init
+$ rails g rang:assets:init
 ```
 
 Caveats:
@@ -73,7 +73,7 @@ Caveats:
 
 ### Templates
 
-In line with the structure above, RailsMeetAngular also compiles templates into
+In line with the structure above, Rang also compiles templates into
 Angular's `$templateCache`. You should load them in your routes like this:
 
 ```javascript
@@ -113,13 +113,13 @@ supported because only Slim is good.)
 
 ### Annotation (minification)
 
-RailsMeetAngular employs [ng-annotate](https://github.com/olov/ng-annotate) (via
+Rang employs [ng-annotate](https://github.com/olov/ng-annotate) (via
 [ngannotiate-rails](https://github.com/kikonen/ngannotate-rails)) to make sure
 your Angular code is minified properly.
 
 ### Bower dependencies
 
-RailsMeetAngular uses [rails-assets.org](http://rails-assets.org/) to include
+Rang uses [rails-assets.org](http://rails-assets.org/) to include
 bower packages. While a little slow sometimes, it's still a better solution than
 requiring npm and bower / having a load of useless stuff in source control. For now.
 
@@ -130,18 +130,18 @@ Usage:
 
 ```bash
 # Not strictly necessary, but take a look at what it generates.
-$ rails g rails_meet_angular:bower:init
+$ rails g rang:bower:init
 
 # Adds angular-cookies gem to Gemfile.bower.
-$ rails g rails_meet_angular:bower:add angular-cookies '~ 1.2.0'
+$ rails g rang:bower:add angular-cookies '~ 1.2.0'
 
 # As above, but runs bundler after.
-$ rails g rails_meet_angular:bower:add angular@ '~ 1.2.0'
+$ rails g rang:bower:add angular@ '~ 1.2.0'
 ```
 
 ### CSRF
 
-RailsMeetAngular uses [angular_rails_csrf](https://github.com/jsanders/angular_rails_csrf)
+Rang uses [angular_rails_csrf](https://github.com/jsanders/angular_rails_csrf)
 to join up Rails + Angular's CSRF protection.
 
 So you don't need to feel bad turning it off anymore!
@@ -152,19 +152,19 @@ To avoid having a controller just to serve 'ng-view' there's a convenience
 action for you to wire your root to.
 
 ```bash
-$ rails g rails_meet_angular:add_root
+$ rails g rang:add_root
 ```
 
 Adds this to `config/routes.rb`:
 
 ```ruby
-mount RailsMeetAngular::Engine => "/"
+mount Rang::Engine => "/"
 ```
 
 ### Teaspoon
 
 ```bash
-$ rails g rails_meet_angular:teaspoon:install
+$ rails g rang:teaspoon:install
 ```
 
 This does the following:

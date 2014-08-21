@@ -1,6 +1,6 @@
 require 'slim'
 
-module RailsMeetAngular
+module Rang
   class Railtie < Rails::Railtie
     config.before_configuration do
       Rails.application.config.assets.paths << "#{Rails.root}/app/assets/frontend"

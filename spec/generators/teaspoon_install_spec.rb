@@ -1,10 +1,10 @@
 require "spec_helper"
 require "rails/generators"
-require_relative "../../lib/rails/generators/rails_meet_angular/teaspoon/install/install_generator.rb"
+require_relative "../../lib/rails/generators/rang/teaspoon/install/install_generator.rb"
 
-describe RailsMeetAngular::Teaspoon::Generators::InstallGenerator do
+describe Rang::Teaspoon::Generators::InstallGenerator do
 
-  let(:klass) { RailsMeetAngular::Teaspoon::Generators::InstallGenerator }
+  let(:klass) { Rang::Teaspoon::Generators::InstallGenerator }
   let(:generator) { klass.new }
 
   it "has a description" do
@@ -23,7 +23,7 @@ describe RailsMeetAngular::Teaspoon::Generators::InstallGenerator do
   describe "#add_angular_mocks_to_gemfile" do
     it "Runs bower:add generator with angular-mocks" do
       expect(generator).to receive(:generate)
-        .with("rails_meet_angular:bower:add", "angular-mocks '~> 1.2.0' quiet")
+        .with("rang:bower:add", "angular-mocks '~> 1.2.0' quiet")
       generator.add_angular_mocks_to_gemfile
     end
   end

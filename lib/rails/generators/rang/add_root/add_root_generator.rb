@@ -1,10 +1,10 @@
-module RailsMeetAngular
+module Rang
   module Generators
     class AddRootGenerator < Rails::Generators::Base
       desc "Adds a root route that is just ng-view."
 
       def add_route
-        route 'mount RailsMeetAngular::Engine => "/"'
+        route 'mount Rang::Engine => "/"'
       end
 
     end

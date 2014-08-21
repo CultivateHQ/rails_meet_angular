@@ -17,7 +17,7 @@ class ContextFake
   alias_method :depend_on_asset, :return_self
 end
 
-describe RailsMeetAngular::Helpers do
+describe Rang::Helpers do
 
   describe '#templates' do
     let(:context) { ContextFake.new }
@@ -25,14 +25,14 @@ describe RailsMeetAngular::Helpers do
     it 'calls given block for each template path' do
       allow(context).to receive(:logical_paths).and_return(['one.htm','two.htm','three.htm', 'invalid.jpg'])
       expect do |b|
-        RailsMeetAngular::Helpers.templates(context, &b)
+        Rang::Helpers.templates(context, &b)
       end.to yield_control.exactly(3).times
     end
 
     it 'calls given block with valid slimmed path' do
       allow(context).to receive(:logical_paths).and_return(['one.htm'])
       expect do |b|
-        RailsMeetAngular::Helpers.templates(context, &b)
+        Rang::Helpers.templates(context, &b)
       end.to yield_with_args('one.slim', anything)
     end
 
@@ -41,16 +41,16 @@ describe RailsMeetAngular::Helpers do
       allow(context).to receive(:logical_paths).and_return(['one.htm'])
       allow(context).to receive(:find_asset).and_return(template_string)
       expect do |b|
-        RailsMeetAngular::Helpers.templates(context, &b)
-      end.to yield_with_args(anything, RailsMeetAngular::Helpers.escape_javascript(template_string))
+        Rang::Helpers.templates(context, &b)
+      end.to yield_with_args(anything, Rang::Helpers.escape_javascript(template_string))
     end
 
     it 'calls given block with escaped template string' do
       template_string = '<p>html</p>'
       allow(context).to receive(:logical_paths).and_return(['one.htm'])
-      allow(RailsMeetAngular::Helpers).to receive(:escape_javascript).and_return(template_string)
+      allow(Rang::Helpers).to receive(:escape_javascript).and_return(template_string)
       expect do |b|
-        RailsMeetAngular::Helpers.templates(context, &b)
+        Rang::Helpers.templates(context, &b)
       end.to yield_with_args(anything, template_string)
     end
 
@@ -58,7 +58,7 @@ describe RailsMeetAngular::Helpers do
       template_path = 'one.htm'
       allow(context).to receive(:logical_paths).and_return([template_path, 'invalid.jpg'])
       expect(context).to receive(:depend_on_asset).with(template_path)
-      RailsMeetAngular::Helpers.templates(context) {}
+      Rang::Helpers.templates(context) {}
     end
   end
 end
