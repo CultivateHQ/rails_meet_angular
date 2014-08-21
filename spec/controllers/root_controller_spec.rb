@@ -5,7 +5,7 @@ describe RailsMeetAngular::RootController do
 
   describe '#display' do
     it 'returns an ng-view element' do
-      expect(controller).to receive(:render).with({text: '<div ng-view></div>'})
+      expect(controller).to receive(:render).with({text: '<div ng-view></div>', layout: 'application'})
       controller.display
     end
   end
