@@ -34,8 +34,8 @@ describe RailsMeetAngular::Bower::Generators::InitGenerator do
     end
 
     it 'adds essential angular gems' do
-      expect(generator).to receive(:generate).with("rails_meet_angular:bower:add angular '~> 1.2.0' quiet")
-      expect(generator).to receive(:generate).with("rails_meet_angular:bower:add angular-route '~> 1.2.0' quiet")
+      expect(generator).to receive(:generate).with("rails_meet_angular:bower:add", "angular '~> 1.2.0' quiet")
+      expect(generator).to receive(:generate).with("rails_meet_angular:bower:add", "angular-route '~> 1.2.0' quiet")
       generator.add_angular_gems
     end
 

@@ -16,8 +16,8 @@ module RailsMeetAngular
         end
 
         def add_angular_gems
-          generate "rails_meet_angular:bower:add angular '~> 1.2.0' quiet"
-          generate "rails_meet_angular:bower:add angular-route '~> 1.2.0' quiet"
+          generate "rails_meet_angular:bower:add", "angular '~> 1.2.0' quiet"
+          generate "rails_meet_angular:bower:add", "angular-route '~> 1.2.0' quiet"
           bundle!
         end
 
