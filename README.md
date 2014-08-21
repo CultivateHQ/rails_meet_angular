@@ -35,6 +35,7 @@ This gem does quite a few disparate things. Summary:
 * Uses [rails-assets](http://rails-assets.org) to manage Bower dependencies.
 * Gets Angular + Rails working together on CSRF protection.
 * Provides an `ng-view` root route.
+* Provides a generator to install and configure [Teaspoon](https://github.com/modeset/teaspoon) for Angular.
 
 ### Frontend structure
 
@@ -148,6 +149,20 @@ Adds this to `config/routes.rb`:
 ```ruby
 mount RailsMeetAngular::Engine => "/"
 ```
+
+### Teaspoon
+
+```bash
+$ rails g rails_meet_angular:teaspoon:install
+```
+
+This does the following:
+
+* Adds `teaspoon` & `phantomjs` to your Gemfile.
+* Runs the normal `teaspoon:install` generator.
+* Adds `angular-mocks` to your Gemfile.bower and includes it in `spec_helper.js`.
+* Preconfigures Teaspoon to fix some issues ([#120](https://github.com/modeset/teaspoon/issues/120), [#197](https://github.com/modeset/teaspoon/issues/197)).
+* Configures Teaspoon to enable putting specs alongside your code (optional).
 
 
 ## Contributing
