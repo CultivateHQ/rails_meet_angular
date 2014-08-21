@@ -23,7 +23,13 @@
 
 #### Tests
 * Support inline JS tests.
+* Neaten up generator when executed multiple times.
 
 #### Other
 * Rename it to something shorter.
 * ~~Convenience root route to ng-view.~~
+* Consider where to put Gemfile.bower include.
+* Refactor bower:init generator to use bower:add
+
+#### Docs
+* Docs for teaspoon installer.
