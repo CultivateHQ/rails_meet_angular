@@ -20,9 +20,19 @@ Then:
 
 ```bash
 $ bundle install
+```
 
-# Installs AngularJS.
+## Quickstart
+
+```bash
+# Sets up Gemfile.bower, installs Angular.
 $ rails g rails_meet_angular:bower:init
+
+# Restructures assets/
+$ rails g rails_meet_angular:assets:init
+
+# Installs & configures Teaspoon for tests.
+$ rails g rails_meet_angular:teaspoon:install
 ```
 
 ## Features
@@ -64,7 +74,7 @@ Caveats:
 ### Templates
 
 In line with the structure above, RailsMeetAngular also compiles templates into
-Angular's $templateCache. You should load them in your routes like this:
+Angular's `$templateCache`. You should load them in your routes like this:
 
 ```javascript
 angular
@@ -78,7 +88,7 @@ angular
   });
 ```
 
-And then in your application.js, follow this structure:
+And then in your `application.js`, follow this structure:
 
 ```javascript
 //= require angular
@@ -101,10 +111,11 @@ in your directory tree.
 (This should probably be optional, but it isn't for now. Also only Slim is
 supported because only Slim is good.)
 
-### Annotation (ng-min)
+### Annotation (minification)
 
 RailsMeetAngular employs [ng-annotate](https://github.com/olov/ng-annotate) (via
-ngannotiate-rails) to make sure your Angular code is minified properly.
+[ngannotiate-rails](https://github.com/kikonen/ngannotate-rails)) to make sure
+your Angular code is minified properly.
 
 ### Bower dependencies
 
@@ -160,7 +171,7 @@ This does the following:
 
 * Adds `teaspoon` & `phantomjs` to your Gemfile.
 * Runs the normal `teaspoon:install` generator.
-* Adds `angular-mocks` to your Gemfile.bower and includes it in `spec_helper.js`.
+* Adds `angular-mocks` to your `Gemfile.bower` and includes it in `spec_helper.js`.
 * Preconfigures Teaspoon to fix some issues ([#120](https://github.com/modeset/teaspoon/issues/120), [#197](https://github.com/modeset/teaspoon/issues/197)).
 * Configures Teaspoon to enable putting specs alongside your code (optional).
 
