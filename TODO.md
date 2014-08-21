@@ -23,7 +23,7 @@
 
 #### Tests
 * ~~Support inline JS tests.~~
-* Neaten up generator when executed multiple times.
+* ~~Neaten up generator when executed multiple times.~~
 
 #### Other
 * Rename it to something shorter.
