@@ -15,7 +15,12 @@ module RailsMeetAngular
             (", '#{version_string}'" unless version_string.empty?).to_s +
             "\n"
           bundle! if run_bundler?
-          puts "\033[36mDon't forget to add #{bower_package} to application.js!\033[0m" # Cyan
+        end
+
+        def notify_add
+          unless args.include? 'quiet'
+            say("Don't forget to add #{bower_package} to application.js!", :cyan)
+          end
         end
 
         private
