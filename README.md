@@ -1,4 +1,4 @@
-# Rails, Meet Angular
+# Rails, Meet Angular (rename pending)
 
 __VERY EARLY DAYS — much of this is imagined__
 
