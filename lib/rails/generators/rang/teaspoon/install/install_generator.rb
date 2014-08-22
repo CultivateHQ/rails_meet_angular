@@ -2,6 +2,8 @@ module Rang
   module Teaspoon
     module Generators
       class InstallGenerator < Rails::Generators::Base
+        include Rang::Util
+
         desc "Installs teaspoon with sensible defaults for Angular."
 
         def add_teaspoon_to_gemfile
@@ -54,7 +56,7 @@ module Rang
         end
 
         def inform_about_better_errors
-          if Gem::Specification::find_all_by_name('better_errors').any?
+          if gem_present? 'better_errors'
             say "\nNote: the better_errors gem prevents ruby exceptions being " +
                 "reported when running `teaspoon`.", :cyan
             say "See: https://github.com/modeset/teaspoon/issues/120\n\n"
