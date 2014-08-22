@@ -7,5 +7,8 @@ Rang.configure do |config|
   # This disables individual precompilation of HTML files in assets/.
   # By default Rang injects them into $templateCache instead.
   config.disable_html_precompilation = true
-  
+
+  # Name of folder within app/assets to use for collected assets.
+  config.frontend_assets_directory = 'frontend'
+
 end

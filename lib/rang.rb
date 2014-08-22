@@ -5,7 +5,6 @@ require "rang/config"
 require "rang/patcher"
 
 if defined? Rails
-  require "rang/railtie"
   require "rang/engine/railtie"
   require "ngannotate/rails"
   require "slim"

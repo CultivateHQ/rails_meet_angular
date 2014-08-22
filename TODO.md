@@ -3,7 +3,6 @@
 ### Requirements
 
 #### Assets
-* ~~Support for angular templates using ERB, Slim~~.
 * __??__ Provide structure for Angular JS assets thru generators.
 
 #### API
@@ -13,10 +12,6 @@
 * Auth strategy?
 
 #### Other
-* Add initializer for:
-    * Disabling-disabling precompilation of htm files.
-    * That one weird trick that sprockets developers don't want you to know!
-* Document weird trick.
 
 ### Done
 * ~~Docs for teaspoon installer.~~
@@ -33,3 +28,8 @@
 * ~~Bower stuff thru [rails-assets](https://rails-assets.org/).~~
 * ~~Rename it to something shorter.~~
 * ~~Stop templates precompiling individually.~~
+* ~~Add initializer for:~~
+    * ~~Disabling-disabling precompilation of htm files.~~
+    * ~~That one weird trick that sprockets developers don't want you to know!~~
+* ~~Document weird trick.~~
+* ~~Support for angular templates using ERB, Slim~~.
