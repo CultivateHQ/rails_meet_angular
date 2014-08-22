@@ -7,7 +7,6 @@ require "rang/patcher"
 if defined? Rails
   require "rang/engine/railtie"
   require "ngannotate/rails"
-  require "slim"
   require "angular_rails_csrf"
 end
 

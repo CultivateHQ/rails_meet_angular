@@ -82,7 +82,7 @@ angular
   .config(function($routeProvider) {
     $routeProvider
       .when('/posts', {
-        templateUrl: '/assets/posts/posts.html',
+        templateUrl: '/assets/posts/posts.html', // Use .html, not .slim, etc
         controller: 'PostsController'
       });
   });
@@ -108,8 +108,8 @@ angular.module('blog', ['blog.posts', 'ngRoute'])
 `AngularTemplates.load` is DI'd with `$templateCache` and includes all the templates
 in your directory tree.
 
-(This should probably be optional, but it isn't for now. Also only Slim is
-supported because only Slim is good.)
+[Slim](https://github.com/slim-template/slim-rails) is automatically supported
+for assets if it's in your `Gemfile`.
 
 ### Annotation (minification)
 
