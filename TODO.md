@@ -33,3 +33,4 @@
     * ~~That one weird trick that sprockets developers don't want you to know!~~
 * ~~Document weird trick.~~
 * ~~Support for angular templates using ERB, Slim~~.
+* ~~Add optional ng-app adjustments.~~

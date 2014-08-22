@@ -24,8 +24,18 @@ module Rang
           template 'components.js', 'app/assets/frontend/components/components.js'
         end
 
-        def print_message
-          say "\n\nDon't forget to add ng-app='#{application_name}' to application.html!\n\n", :cyan
+        def add_html_attribute
+          if !no? "\n\nAdd ng-app='#{application_name}' to application.html? [Yn]", :cyan
+            in_root do
+              if File.exists? "app/views/layouts/application.html.erb"
+                gsub_file "app/views/layouts/application.html.erb", "<html>", "<html ng-app='#{application_name}'>"
+              elsif File.exists? "app/views/layouts/application.slim"
+                gsub_file "app/views/layouts/application.slim", /^html$/, "html ng-app='#{application_name}'"
+              elsif File.exists?"app/views/layouts/application.html.slim"
+                gsub_file "app/views/layouts/application.html.slim", /^html$/, "html ng-app='#{application_name}'"
+              end
+            end
+          end
         end
 
         private

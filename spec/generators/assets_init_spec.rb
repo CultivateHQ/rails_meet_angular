@@ -33,6 +33,8 @@ describe Rang::Assets::Generators::InitGenerator do
     end
   end
 
+  skip "test #add_html_attribute"
+
   describe "#create_assets!" do
     before do
       allow(generator).to receive(:template)
