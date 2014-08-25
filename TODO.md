@@ -3,15 +3,19 @@
 ### Requirements
 
 #### Assets
-* __??__ Provide structure for Angular JS assets thru generators.
+* Document HTML depends_on not working
+* Check if we can find out whether we're precompiling and stop injecting templates
+  in 'development' env.
 
 #### API
-* Smooth out API calls between Rails + Angular
-  - [Angular restmod](https://github.com/platanus/angular-restmod)
-  - Active model serializers?
-* Auth strategy?
+* Auth strategy? (recommendeD?)
+
+#### Examples
+* Add minimal example/starter data.
 
 #### Other
+* Breakout bundle!
+* Test API configure generator.
 
 ### Done
 * ~~Docs for teaspoon installer.~~
@@ -34,3 +38,8 @@
 * ~~Document weird trick.~~
 * ~~Support for angular templates using ERB, Slim~~.
 * ~~Add optional ng-app adjustments.~~
+* ~~__??__ Provide structure for Angular JS assets thru generators.~~
+* ~~Scope API routes~~
+* ~~Smooth out API calls between Rails + Angular~~
+  - ~~[Angular restmod](https://github.com/platanus/angular-restmod)~~
+  - ~~Active model serializers?~~
