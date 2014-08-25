@@ -15,7 +15,7 @@
 
 #### Other
 * Breakout bundle!
-* Test API configure generator.
+* Document api:configure, :install
 
 ### Done
 * ~~Docs for teaspoon installer.~~
