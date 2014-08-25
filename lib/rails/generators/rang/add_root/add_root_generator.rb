@@ -4,7 +4,7 @@ module Rang
       desc "Adds a root route that is just ng-view."
 
       def add_route
-        route 'mount Rang::Engine => "/"'
+        route "mount Rang::Engine => \"/\"\n"
       end
 
     end
