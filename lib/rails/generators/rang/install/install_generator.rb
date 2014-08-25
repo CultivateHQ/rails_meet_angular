@@ -20,6 +20,12 @@ module Rang
         end
       end
 
+      def configure_api
+        if !no? "\n\nConfigure default API interface with active_model_serializers and angular-restmod? [Yn]", :cyan
+          generate "rang:api:configure"
+        end
+      end
+
       def install_teaspoon
         if !no? "\n\nInstall & configure Teaspoon for Angular/Jasmine tests? [Yn]", :cyan
           generate "rang:teaspoon:install"
