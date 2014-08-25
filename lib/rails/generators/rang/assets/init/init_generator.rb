@@ -43,11 +43,11 @@ module Rang
         end
 
         def layout_file
-          ApplicationController.new.send(:_layout).identifier
+          ::ApplicationController.new.send(:_layout).identifier
         end
 
         def layout_handler
-          ApplicationController.new.send(:_layout).handler.class.to_s
+          ::ApplicationController.new.send(:_layout).handler.class.to_s
         end
 
       end

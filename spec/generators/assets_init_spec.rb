@@ -67,6 +67,8 @@ describe Rang::Assets::Generators::InitGenerator do
     it "hasn't been broken by ActionController changes" do
       expect(ApplicationController.new.send(:_layout).identifier).to be_a String
       expect(ApplicationController.new.send(:_layout).handler).to respond_to :call
+      expect(generator.send(:layout_file)).to eq ApplicationController.new.send(:_layout).identifier
+      expect(generator.send(:layout_handler)).to eq ApplicationController.new.send(:_layout).handler.class.to_s
     end
   end
 
