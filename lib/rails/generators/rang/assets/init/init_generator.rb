@@ -27,12 +27,10 @@ module Rang
         def add_html_attribute
           if !no? "\n\nAdd ng-app='#{application_name}' to application.html? [Yn]", :cyan
             in_root do
-              if File.exists? "app/views/layouts/application.html.erb"
-                gsub_file "app/views/layouts/application.html.erb", "<html>", "<html ng-app='#{application_name}'>"
-              elsif File.exists? "app/views/layouts/application.slim"
-                gsub_file "app/views/layouts/application.slim", /^html$/, "html ng-app='#{application_name}'"
-              elsif File.exists?"app/views/layouts/application.html.slim"
-                gsub_file "app/views/layouts/application.html.slim", /^html$/, "html ng-app='#{application_name}'"
+              if layout_handler == "ActionView::Template::Handlers::ERB"
+                gsub_file layout_file, "<html>", "<html ng-app='#{application_name}'>"
+              elsif layout_handler == "Slim::RailsTemplate"
+                gsub_file layout_file, /^html$/, "html ng-app='#{application_name}'"
               end
             end
           end
@@ -42,6 +40,14 @@ module Rang
 
         def application_name
           Rails.application.class.parent_name
+        end
+
+        def layout_file
+          ApplicationController.new.send(:_layout).identifier
+        end
+
+        def layout_handler
+          ApplicationController.new.send(:_layout).handler.class.to_s
         end
 
       end

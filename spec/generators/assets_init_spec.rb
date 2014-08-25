@@ -33,7 +33,42 @@ describe Rang::Assets::Generators::InitGenerator do
     end
   end
 
-  skip "test #add_html_attribute"
+  describe "#add_html_attributes" do
+    before do
+      allow(generator).to receive(:application_name).and_return 'dogs'
+      allow(generator).to receive(:gsub_file)
+      allow(generator).to receive(:no?).and_return false
+    end
+
+    context "when layout is an ERB file" do
+      before do
+        allow(generator).to receive(:layout_file).and_return "fake.html.erb"
+        allow(generator).to receive(:layout_handler).and_return "ActionView::Template::Handlers::ERB"
+      end
+
+      it "inserts ng-app" do
+        expect(generator).to receive(:gsub_file).with("fake.html.erb", "<html>", "<html ng-app='dogs'>")
+        generator.add_html_attribute
+      end
+    end
+
+    context "when layout is a Slim file" do
+      before do
+        allow(generator).to receive(:layout_file).and_return "fake.slim"
+        allow(generator).to receive(:layout_handler).and_return "Slim::RailsTemplate"
+      end
+
+      it "inserts ng-app" do
+        expect(generator).to receive(:gsub_file).with("fake.slim", /^html$/, "html ng-app='dogs'")
+        generator.add_html_attribute
+      end
+    end
+
+    it "hasn't been broken by ActionController changes" do
+      expect(ApplicationController.new.send(:_layout).identifier).to be_a String
+      expect(ApplicationController.new.send(:_layout).handler).to respond_to :call
+    end
+  end
 
   describe "#create_assets!" do
     before do
