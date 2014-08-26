@@ -2,17 +2,11 @@
 
 ### Requirements
 
-#### Assets
-
-#### API
-* Auth strategy? (recommendeD?)
-
 #### Examples
 * Add minimal example/starter data.
 
 #### Other
 * Breakout bundle!
-* Document api:configure, :install
 
 ### Done
 * ~~Docs for teaspoon installer.~~
