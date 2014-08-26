@@ -25,19 +25,13 @@ $ bundle install
 ## Quickstart
 
 ```bash
-# Sets up Gemfile.bower, installs Angular.
-$ rails g rang:bower:init
-
-# Restructures assets/
-$ rails g rang:assets:init
-
-# Installs & configures Teaspoon for tests.
-$ rails g rang:teaspoon:install
+# Prompts you to run each of the generators below.
+$ rails g rang:install
 ```
 
 ## Features
 
-This gem does quite a few disparate things. Summary:
+This gem collects quite a few things. Summary:
 
 * Facilitated the Angular best practice structure.
 * Serves and precompiles Angular templates.
@@ -175,6 +169,19 @@ This does the following:
 * Preconfigures Teaspoon to fix some issues ([#120](https://github.com/modeset/teaspoon/issues/120), [#197](https://github.com/modeset/teaspoon/issues/197)).
 * Configures Teaspoon to enable putting specs alongside your code (optional).
 
+### API Configuration
+
+```bash
+$ rails g rang:api:configure
+```
+
+This does the following:
+
+* Installs and confgures [active_model_serializers](https://github.com/rails-api/active_model_serializers/tree/0-9-stable)
+  to serve Angular-appropriate JSON out of the box.
+* Installs and requires [angular-restmod](https://github.com/platanus/angular-restmod),
+  a Rails-inspired ORM for Angular.
+* Sets up an `api/` route and controller scope for your API controllers.
 
 ## Contributing
 
