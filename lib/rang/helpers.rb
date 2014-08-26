@@ -7,9 +7,10 @@ module Rang
       # the peculiar scope that assets are compiled in.
       def templates(context)
         template_paths(context).each do |path|
-          context.depend_on_asset(path)
-          asset = context.environment.find_asset(path)
-          yield path.sub(/\..*$/, ".html"), escape_javascript(asset.to_s)
+          transformed_path = path.sub(/\..*$/, ".html")
+          context.depend_on_asset(transformed_path)
+          asset = context.environment.find_asset(transformed_path.sub(/\..*$/, ".html"))
+          yield transformed_path.sub(/\..*$/, ".html"), escape_javascript(asset.to_s)
         end
       end
 

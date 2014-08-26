@@ -3,9 +3,6 @@
 ### Requirements
 
 #### Assets
-* Document HTML depends_on not working
-* Check if we can find out whether we're precompiling and stop injecting templates
-  in 'development' env.
 
 #### API
 * Auth strategy? (recommendeD?)
@@ -43,3 +40,5 @@
 * ~~Smooth out API calls between Rails + Angular~~
   - ~~[Angular restmod](https://github.com/platanus/angular-restmod)~~
   - ~~Active model serializers?~~
+* ~~Check if we can find out whether we're precompiling and stop injecting templates
+  in 'development' env.~~

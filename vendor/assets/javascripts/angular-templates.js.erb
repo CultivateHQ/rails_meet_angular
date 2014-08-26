@@ -1,8 +1,10 @@
 var AngularTemplates = (function(){
 
   var loadTemplates = function($templateCache) {
-    <% Rang::Helpers.templates(self) do |path, data| %>
-      $templateCache.put('/assets/<%= path %>', '<%= data %>');
+    <% if Rails.env.production? %>
+      <% Rang::Helpers.templates(self) do |path, data| %>
+        $templateCache.put('/assets/<%= path %>', '<%= data %>');
+      <% end %>
     <% end %>
   }
 
