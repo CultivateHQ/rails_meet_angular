@@ -9,7 +9,7 @@ module Rang
 
     private
 
-    def patch_sprockets_to_use_html_extension!
+    def self.patch_sprockets_to_use_html_extension!
       Rails.application.assets.send(:trail).alias_extension('.slim', '.html')
 
       Kernel::silence_warnings do
@@ -29,16 +29,16 @@ module Rang
       Rails.application.assets.register_mime_type 'text/html', '.html'
     end
 
-    def disable_html_precompilation!
+    def self.disable_html_precompilation!
       # Ammend precompile selector to exclude html files
       Rails.application.config.assets.precompile = [ Proc.new { |path, fn| fn =~ /app\/assets/ && !%w(.js .css .htm .html).include?(File.extname(path)) }, /application.(css|js)$/ ]
     end
 
-    def add_frontend_assets_directory!(directory)
+    def self.add_frontend_assets_directory!(directory)
       Rails.application.config.assets.paths << "#{Rails.root}/app/assets/#{directory}"
     end
 
-    def register_slim_as_assets_engine!
+    def self.register_slim_as_assets_engine!
       Rails.application.assets.register_engine '.slim', ::Slim::Template
     end
   end
