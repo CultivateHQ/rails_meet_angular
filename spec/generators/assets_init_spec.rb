@@ -35,7 +35,7 @@ describe Rang::Assets::Generators::InitGenerator do
 
   describe "#add_html_attributes" do
     before do
-      allow(generator).to receive(:application_name).and_return 'dogs'
+      allow(Rang::Util).to receive(:application_name).and_return 'dogs'
       allow(generator).to receive(:gsub_file)
       allow(generator).to receive(:no?).and_return false
     end
