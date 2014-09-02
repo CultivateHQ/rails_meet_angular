@@ -1,0 +1,11 @@
+//= require_self
+//= require_tree .
+
+angular.module('<%= Rang::Util.application_name %>.posts', ['ngRoute'])
+  .config(function($routeProvider) {
+    $routeProvider
+      .when('/posts', {
+        controller: 'PostsIndexCtrl',
+        templateUrl: '/assets/posts/index.html'
+      })
+  })

@@ -1,0 +1,41 @@
+angular.module('<%= Rang::Util.application_name %>.posts').service('PostsService', function() {
+
+  var posts = [
+    {
+      title: 'Oleg Popov',
+      body: 'Oleg Konstantinovich Popov (Russian: Олег Константинович Попо́в, ' +
+            'born 31 July 1930) is a famous Soviet and Russian clown and circus ' +
+            'artist. Popov is also called the "Sunshine clown".\n\n' +
+            'He was born on 31 July 1930 in Moscow, the son of a clock-maker. ' +
+            'He studied elements of acrobatics, juggling, and other circus ' +
+            'skills in his youth. In 1949, he graduated from the Russian circus ' +
+            'school in Moscow and started his career in the Moscow Circus on ' +
+            'Tsvetnoy Boulevard. Six years later, he became the first clown from ' +
+            'the Union of Soviet Socialist Republics to perform in the Western ' +
+            'world. In 1969, he was honored with the title of People\'s Artist ' +
+            'of the USSR. Popov\'s fame extended to Melbourne, Australia, where ' +
+            'he was named King of Moomba (1971).'
+    },
+
+    {
+      title: 'Grock',
+      image: 'http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Grock_1903.jpg/108px-Grock_1903.jpg',
+      body: 'Grock (January 10, 1880 – July 14, 1959), born Charles Adrien ' +
+            'Wettach, was a Swiss clown, composer and musician. Called "the ' +
+            'king of clowns" and "the greatest of Europe\'s clowns", Grock was ' +
+            'once the most highly paid entertainer in the world.\n\n' +
+            'Grock was born in Loveresse, a village in the Bernese Jura in the C' +
+            'anton of Bern. He started early as a performer, learning musiciansh' +
+            'ip and acrobatic skills from his father. When a caravan of Roma ' +
+            'passed through, he joined them, learning more instruments and gaini' +
+            'ng confidence with them. In 1894, he debuted with Fiame Wetzel\'s t' +
+            'raveling circus. He become a clown, working first with Brick in ' +
+            '1903, adopting the name "Grock", and then the famous clown Antonet ' +
+            '(Umberto Guillaum).'
+    }
+  ]
+
+  return {
+    posts: posts
+  }
+})

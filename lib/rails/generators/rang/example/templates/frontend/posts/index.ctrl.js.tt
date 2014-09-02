@@ -1,0 +1,6 @@
+angular.module('<%= Rang::Util.application_name %>.posts').controller('PostsIndexCtrl', function($scope, PostsService) {
+  'use strict';
+
+  $scope.posts = PostsService.posts
+
+})
