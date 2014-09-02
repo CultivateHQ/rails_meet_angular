@@ -136,28 +136,6 @@ $ rails g rang:bower:add angular-cookies '~ 1.2.0'
 $ rails g rang:bower:add angular@ '~ 1.2.0'
 ```
 
-### CSRF
-
-Rang uses [angular_rails_csrf](https://github.com/jsanders/angular_rails_csrf)
-to join up Rails + Angular's CSRF protection.
-
-So you don't need to feel bad turning it off anymore!
-
-### Root route
-
-To avoid having a controller just to serve 'ng-view' there's a convenience
-action for you to wire your root to.
-
-```bash
-$ rails g rang:add_root
-```
-
-Adds this to `config/routes.rb`:
-
-```ruby
-mount Rang::Engine => "/"
-```
-
 ### Teaspoon
 
 ```bash
@@ -185,6 +163,28 @@ This does the following:
 * Installs and requires [angular-restmod](https://github.com/platanus/angular-restmod),
   a Rails-inspired ORM for Angular.
 * Sets up an `api/` route and controller scope for your API controllers.
+
+### CSRF
+
+Rang uses [angular_rails_csrf](https://github.com/jsanders/angular_rails_csrf)
+to join up Rails + Angular's CSRF protection.
+
+So you don't need to feel bad turning it off anymore!
+
+### Root route
+
+To avoid having a controller just to serve 'ng-view' there's a convenience
+action for you to wire your root to.
+
+```bash
+$ rails g rang:add_root
+```
+
+Adds this to `config/routes.rb`:
+
+```ruby
+mount Rang::Engine => "/"
+```
 
 ## Contributing
 
