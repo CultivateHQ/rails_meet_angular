@@ -5,6 +5,7 @@ module Rang
       disable_html_precompilation! if Config.disable_html_precompilation
       add_frontend_assets_directory!(Config.frontend_assets_directory) if Config.frontend_assets_directory
       register_slim_as_assets_engine! if Util.gem_present? 'slim'
+      remove_angular_delims_from_slim! if Util.gem_present?('slim') && Config.remove_angular_delims_from_slim
     end
 
     private
@@ -40,6 +41,10 @@ module Rang
 
     def self.register_slim_as_assets_engine!
       Rails.application.assets.register_engine '.slim', ::Slim::Template
+    end
+
+    def self.remove_angular_delims_from_slim!
+      Slim::Engine.set_default_options({attr_delims: {'(' => ')', '[' => ']'}})
     end
   end
 end

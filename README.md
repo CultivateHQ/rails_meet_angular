@@ -40,6 +40,7 @@ This gem collects quite a few things. Summary:
 * Gets Angular + Rails working together on CSRF protection.
 * Provides an `ng-view` root route.
 * Provides a generator to install and configure [Teaspoon](https://github.com/modeset/teaspoon) for Angular.
+* Configures slim, if available, to ignore `{` and `}`.
 
 ### Frontend structure
 

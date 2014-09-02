@@ -15,4 +15,11 @@ Rang.configure do |config|
   # Name of folder within app/assets to use for collected assets.
   config.frontend_assets_directory = 'frontend'
 
+  # Disable { and } as Slim delimiters. This means you won't get tripped up when
+  # you use them in Angular, e.g.
+  #     p {{post.title}}
+  # But you can't do this:
+  #     a{href="#"}
+  config.remove_angular_delims_from_slim = true
+
 end

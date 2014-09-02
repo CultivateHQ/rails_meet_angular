@@ -87,4 +87,17 @@ describe Rang::Patcher do
     end
   end
 
+  describe "#remove_angular_delims_from_slim!" do
+
+    before do
+      allow(Rang::Util).to receive(:gem_present?).and_return(true)
+      enable_config(:remove_angular_delims_from_slim, "frontend")
+    end
+
+    it "should change attr_delims in slim default_config" do
+      expect(Slim::Engine).to receive(:set_default_options).with({attr_delims: {'(' => ')', '[' => ']'}})
+      Rang::Patcher.patch!
+    end
+  end
+
 end
