@@ -58,9 +58,11 @@ To get started:
 $ rails g rang:assets:init
 ```
 
+This moves your existing `/app/assets` to `/app/assets.removed` and sets up a
+fresh assets directory following the best practice structure.
+
 Caveats:
 
-* JS tests still aren't integrated.
 * CSS might still need some special treatment.
 * The structure is still under active refinement. However, this gem is flexible
   enough to accept most changes.

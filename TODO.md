@@ -7,6 +7,8 @@
 
 #### Other
 * Breakout bundle!
+* Make assets.removed more obvious.
+
 
 ### Done
 * ~~Docs for teaspoon installer.~~
@@ -36,3 +38,4 @@
   - ~~Active model serializers?~~
 * ~~Check if we can find out whether we're precompiling and stop injecting templates
   in 'development' env.~~
+* ~~Change docs/defaults for template precompilation.~~
