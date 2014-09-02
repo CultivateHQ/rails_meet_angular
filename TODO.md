@@ -3,11 +3,10 @@
 ### Requirements
 
 #### Examples
-* Add minimal example/starter data.
+* Add test example.
 
 #### Other
 * Breakout bundle!
-* Make assets.removed more obvious.
 
 
 ### Done
@@ -39,3 +38,5 @@
 * ~~Check if we can find out whether we're precompiling and stop injecting templates
   in 'development' env.~~
 * ~~Change docs/defaults for template precompilation.~~
+* ~~Add minimal example/starter data.~~
+* ~~Make assets.removed more obvious.~~
