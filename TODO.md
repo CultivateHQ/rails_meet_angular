@@ -3,7 +3,6 @@
 ### Requirements
 
 #### Examples
-* Add test example.
 
 #### Other
 * Breakout bundle!
@@ -40,3 +39,5 @@
 * ~~Change docs/defaults for template precompilation.~~
 * ~~Add minimal example/starter data.~~
 * ~~Make assets.removed more obvious.~~
+* ~~Add test example.~~
+* ~~Add FDL for wikipedia content.~~
