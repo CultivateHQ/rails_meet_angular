@@ -73,10 +73,18 @@ describe Rang::Teaspoon::Generators::InstallGenerator do
 
   describe "#require_angular_mocks" do
     it "adds angular-mocks require to test_helper" do
-      expect(generator).to receive(:append_file)
-        .with('spec/javascripts/spec_helper.js') do |a, &block|
-          expect(block.call).to include '//= require angular-mocks'
-        end
+      expect(generator).to receive(:inject_into_file) do |filename, regex, &block|
+        expect(filename).to eq "spec/javascripts/spec_helper.js"
+        expect(block.call).to eq "//= require angular\n//= require angular-mocks\n"
+      end
+      generator.require_angular_mocks
+    end
+
+    it "uses a line regex that matches the right line" do
+      expect(generator).to receive(:inject_into_file) do |filename, regex, &block|
+        regex = regex[:before]
+        expect("//= require application" =~ regex).to be_truthy
+      end
       generator.require_angular_mocks
     end
   end

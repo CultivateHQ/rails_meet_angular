@@ -1,5 +1,6 @@
 //= require_self
-//= require_tree .
+//= require ./posts.service
+//= require ./index.ctrl
 
 angular.module('<%= Rang::Util.application_name %>.posts', ['ngRoute'])
   .config(function($routeProvider) {

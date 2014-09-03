@@ -37,8 +37,9 @@ module Rang
         end
 
         def require_angular_mocks
-          append_file "spec/javascripts/spec_helper.js" do
-            "//= require angular-mocks"
+          inject_into_file "spec/javascripts/spec_helper.js", before: /\/\/= require application/ do
+            "//= require angular\n" +
+            "//= require angular-mocks\n"
           end
         end
 
