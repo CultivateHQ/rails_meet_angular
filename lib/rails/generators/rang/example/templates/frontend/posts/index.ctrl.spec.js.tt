@@ -1,0 +1,12 @@
+describe('PostsIndexCtrl', function(){
+
+  beforeEach(module('<%= Rang::Util.application_name %>.posts'));
+
+  it('it should provide posts on scope', inject(function($controller) {
+    var scope = {},
+        ctrl = $controller('PostsIndexCtrl', {$scope:scope});
+
+    expect(scope.posts.length).toBe(2);
+  }));
+
+});
