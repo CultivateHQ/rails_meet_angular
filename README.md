@@ -33,7 +33,7 @@ $ rails g rang:install
 
 This gem collects quite a few things. Summary:
 
-* Facilitated the Angular best practice structure.
+* Facilitates the Angular best practice structure.
 * Serves and precompiles Angular templates.
 * Precompiles Angular with DI annotations.
 * Uses [rails-assets](http://rails-assets.org) to manage Bower dependencies.
