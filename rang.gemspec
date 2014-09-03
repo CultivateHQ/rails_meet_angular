@@ -9,14 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Caden Lovelace"]
   spec.email         = ["caden@herostrat.us"]
   spec.summary       = %q{Helpful adjustments to make Rails and Angular play nice together.}
-  spec.description   = %q{* Facilitates the Angular best practice structure.
-                          * Serves and precompiles Angular templates.
-                          * Precompiles Angular with DI annotations.
-                          * Uses [rails-assets](http://rails-assets.org) to manage Bower dependencies.
-                          * Gets Angular + Rails working together on CSRF protection.
-                          * Provides an `ng-view` root route.
-                          * Provides a generator to install and configure [Teaspoon](https://github.com/modeset/teaspoon) for Angular.
-                          * Configures slim, if available, to ignore `{` and `}`.}
+  spec.description   = %q{Provides a suite of generators and adjustments that make Rails
+                          a seamless AngularJS development environment to rival Grunt and Gulp.}
   spec.homepage      = "http://github.com/cultivatehq/rang"
   spec.license       = "MIT"
 
