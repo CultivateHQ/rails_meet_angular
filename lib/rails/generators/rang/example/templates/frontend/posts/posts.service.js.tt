@@ -1,3 +1,6 @@
+// The text in this file is taken from Wikipedia and licensed under the CC BY-SA
+// http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License
+
 angular.module('<%= Rang::Util.application_name %>.posts').service('PostsService', function() {
 
   var posts = [
