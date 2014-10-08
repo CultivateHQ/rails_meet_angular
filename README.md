@@ -1,7 +1,5 @@
 # Rang
 
-__VERY EARLY DAYS — much of this is imagined__
-
 This is a gem that makes Rails and Angular play nicely together.
 
 It should replace all the strange initializers and bag of angular_* gems you've
